@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int a, b, counter = 1;
+void recurse(a, b);
+
+void main() {
+
+    printf("Please enter two integer numbers: ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    recurse(a, b);
+}
+
+void recurse(a, b) {
+
+    if (a < b) {
+        printf("Recursion %d: ", counter++);
+        printf("%d\n", a);
+        recurse(a + 1, b);
+    }
+
+    else if (b < a) {
+        printf("Recursion %d: ", counter++);
+        printf("%d\n", b);
+        recurse(a, b + 1);
+    }
+
+    else if (b == a) {
+        printf("Recursion %d: ", counter++);
+        printf("%d", a);
+    }
+}
